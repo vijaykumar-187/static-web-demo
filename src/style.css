@@ -1,4 +1,8 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -12,18 +16,26 @@ body {
   margin: 0 auto;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
   overflow: hidden;
 }
 
 header {
-  background: #003366;
+  background: linear-gradient(135deg, #003366, #004f8c);
   color: white;
   padding: 2rem;
   text-align: center;
 }
 
-.subtitle { color: #b0c4de; margin-top: 0.5rem; }
+header h1 {
+  font-size: 2.1rem;
+  letter-spacing: 0.5px;
+}
+
+.subtitle {
+  color: #c5d8eb;
+  margin-top: 0.5rem;
+}
 
 .tabs {
   display: flex;
@@ -37,19 +49,58 @@ header {
   padding: 1rem;
   border: none;
   background: transparent;
+  color: #222;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.tab-btn:hover { background: #d8dadf; }
+.tab-btn:hover {
+  background: #d5dce5;
+  color: #003366;
+}
+
 .tab-btn.active {
   background: white;
   color: #003366;
   border-bottom: 3px solid #003366;
 }
 
-.content-box { padding: 2rem; min-height: 180px; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+.content-box {
+  padding: 2rem;
+  min-height: 180px;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h2 {
+  color: #003366;
+  margin-bottom: 0.8rem;
+}
+
+.tab-content p {
+  line-height: 1.7;
+  color: #444;
+}
+
+.tab-content strong {
+  color: #003366;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
